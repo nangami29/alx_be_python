@@ -3,12 +3,12 @@ class BankAccount:
         self.account_balance=initial_balance
     # Encapsulation and behaviours
     def deposit (self, amount):
-        self.amount += amount
+        self.account_balance += amount
         print(f"Deposited: ${amount:.1f}")
     def withdraw (self, amount):
         self.amount = amount
         if amount <= self.account_balance: 
-            self.amount -= amount
+            self.account_balance-= amount
             return  True, 
         
             
@@ -16,5 +16,5 @@ class BankAccount:
             return False   
 
     def display_balance (self):
-        print(f"Current Balance: {self.account_balance:.2f}")
+        print(f"Current Balance: ${self.account_balance:.2f}")
     
