@@ -32,7 +32,7 @@ class Library:
             if book.title == title:
                 book.return_book()
                 return
-    def list_available_books (self):
+    def list_available_books(self):
          for book in self._books:
             if book.is_available():
                 print(f"{book.title} by {book.author}")
