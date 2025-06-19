@@ -25,10 +25,20 @@ class PrintBook(Book):
 
 
 class Library:
-    def add_book(self, books):
+    def __init__(self):
         self.books = []
     
+    def add_book(self, book):
+        if isinstance(book, Book):  # Check if it's a Book or subclass
+            self.books.append(book)
+        elif isinstance(book, EBook):
+            self.books.append(book)
+        else :
+            self.books.append(book)
+    
+
     def list_books(self):
+        
         print (f"Book:{self.title} by {self.author}" )
         print (f"Ebook: {self.title} by {self.author}, File Size: {self.file_size}")
         print (f"PrintBook: {self.title} by {self.author}, Page Count: {self.page_count}")
