@@ -25,8 +25,9 @@ class PrintBook(Book):
 
 
 class Library:
-    def add_book(self, book):
-        return book.append(Book, EBook, PrintBook)
+    def add_book(self, books):
+        self.books = []
+    
     def list_books(self):
         print (f"Book:{self.title} by {self.author}" )
         print (f"Ebook: {self.title} by {self.author}, File Size: {self.file_size}")
