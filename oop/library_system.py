@@ -38,7 +38,10 @@ class Library:
     
 
     def list_books(self):
-        
-        print (f"Book:{self.title} by {self.author}" )
-        print (f"Ebook: {self.title} by {self.author}, File Size: {self.file_size}")
-        print (f"PrintBook: {self.title} by {self.author}, Page Count: {self.page_count}")
+        for book in self.books:
+            if isinstance(book, EBook):
+                print(f"EBook: {book.title} by {book.author}, File Size: {book.file_size}KB")
+            elif isinstance(book, PrintBook):
+                print(f"PrintBook: {book.title} by {book.author}, Page Count: {book.page_count}")
+            else:
+                print(f"Book: {book.title} by {book.author}")
